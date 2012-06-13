@@ -31,6 +31,10 @@
       -moz-box-shadow: -5px 10px 15px gray;
       font-family: sans-serif;
     }
+	#closeme {
+		float: right;
+		cursor: pointer;
+	}
     
   </style>
   <script type="text/javascript">
@@ -42,6 +46,9 @@
 		if(keyCodes.every(function(element, index, array){return element===pattern[index];})){
 			document.getElementById("rainbow-message").style.display="";
 		}
+	}
+	function killTheRainbow(){
+		document.getElementById("rainbow-message").style.display="none";
 	}
 	window.onkeydown=keydownHandler;
    </script>
@@ -58,6 +65,7 @@
 <div id="rainbow-message" style="display:none">
 Double repositories all the way across the sky!<br/>
 <a href="http://help.github.com/fork-a-repo/">What does it mean?</a>
+<span id="closeme" onclick="killTheRainbow()">[ x ]</span>
 </div>
 </body>
 </html>
